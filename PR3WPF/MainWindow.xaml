@@ -1,0 +1,44 @@
+﻿<Window x:Class="PR3WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR3WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <MediaElement x:Name="media" LoadedBehavior="Manual" MediaOpened="Choise_Click"></MediaElement>
+        <ListBox x:Name="FileListBox" Grid.Row="1"></ListBox>
+        <Slider x:Name="Slider" Grid.Row="2" Orientation="Horizontal"></Slider>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Choise" Grid.Column="0" Content="Выбрать папку" Click="Choise_Click"></Button>
+            <Button x:Name="History" Grid.Column="1" Content="История прослушивания" Click="History_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Back" Grid.Column="0" Content="Назад" Click="Back_Click"></Button>
+            <Button x:Name="Play" Content="Играть/Стоп" Click="Play_Click" Grid.ColumnSpan="3" Margin="133,0,133,0"/>
+            <Button x:Name="Forward" Grid.Column="2" Content="Вперед" Height="25" VerticalAlignment="Top" Click="Forward_Click"></Button>
+            <Button x:Name="Repeat" Grid.Column="3" Content="Повтор" Click="Repeat_Click"></Button>
+            <Button x:Name="Random" Grid.Column="4" Content="Случайно"></Button>
+            <Slider x:Name="Volume" Grid.Column="5" Orientation="Horizontal"></Slider>
+        </Grid>
+    </Grid>
+</Window>
